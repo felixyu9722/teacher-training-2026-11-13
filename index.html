@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教师培训课程深度解析 | Teacher Training Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="m1">
+
+  <!-- Top Navigation Header -->
+  <header class="top-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="btn-pill mobile-menu-btn" id="mobileMenuBtn" type="button">☰</button>
+      <div class="brand">
+        <div class="brand-badge">师</div>
+        <span data-zh="教师培训深度解析 · 2026.11.13" data-en="Teacher Training · 13 Nov 2026">教师培训深度解析 · 2026.11.13</span>
+      </div>
+    </div>
+
+    <!-- 4-Course Roadmap Tabs in Exact Order -->
+    <nav class="course-tabs" aria-label="Course Modules">
+      <button class="course-tab active" data-mod="m1" type="button" data-zh="01 青少年心理健康" data-en="01 Youth Mental Health">01 青少年心理健康</button>
+      <button class="course-tab" data-mod="m2" type="button" data-zh="02 课堂教学管理" data-en="02 Classroom Management">02 课堂教学管理</button>
+      <button class="course-tab" data-mod="m3" type="button" data-zh="03 AI 赋能任务型教学" data-en="03 GenAI & TBLT">03 AI 赋能任务型教学</button>
+      <button class="course-tab" data-mod="m4" type="button" data-zh="04 Claytan 教育价值" data-en="04 Claytan: Value of Ed">04 Claytan 教育价值</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-pill" id="openGlossaryBtn" type="button" data-zh="📖 专业术语表" data-en="📖 Glossary">📖 专业术语表</button>
+      <button class="btn-pill accent" id="langToggleBtn" type="button">🌐 EN / 中文</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <!-- Left Sticky Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-card lecturer-meta">
+        <strong id="sideTitle">模块一：青少年心理健康建设</strong>
+        <div id="sideSpeaker">主讲：刘丽（山西大学教育科学学院心理系）</div>
+        <div id="sideSub" style="margin-top:4px;font-size:0.8rem;color:var(--text-muted);">提炼自 59 页培训简报 · 鼠尾草绿</div>
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span data-zh="本课学习进度" data-en="Reading Progress">本课学习进度</span>
+            <span id="progressPct">0/6</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card" id="sidebarSearchCard">
+        <input class="search-box" id="sidebarSearch" type="search" placeholder="搜索症状/关键词（如 ADHD、睡眠）..." data-zh="搜索症状/关键词（如 ADHD、睡眠）..." data-en="Search conditions (e.g. ADHD, sleep)..." />
+      </div>
+
+      <div class="sidebar-card">
+        <ul class="nav-list" id="sideNavList"></ul>
+      </div>
+    </aside>
+
+    <!-- Right Main Content -->
+    <main class="main-content">
+      <div class="module-view active" id="view-m1">
+
+      <!-- Hero Banner -->
+      <section class="hero">
+        <div class="hero-top-row">
+          <div class="hero-eyebrow" data-zh="课程 01 / 04 · 2026年11月13日" data-en="Module 01 / 04 · 13 Nov 2026">课程 01 / 04 · 2026年11月13日</div>
+          <a class="pdf-btn" href="pdfs/01-youth-mental-health.pdf" target="_blank" rel="noopener noreferrer" data-zh="📄 打开讲师原版 PDF" data-en="📄 Open Slides PDF">📄 打开讲师原版 PDF</a>
+        </div>
+        <h1 data-zh="青少年心理健康建设" data-en="Building Adolescent Mental Health">青少年心理健康建设</h1>
+        <p class="hero-sub" data-zh="重视 · 识别 · 理解 · 建设 · 求助 —— 让每一个孩子都被看见、倾听、陪伴、帮助。" data-en="Prioritize · Identify · Understand · Build · Seek Help — Ensuring every child is seen, heard, accompanied, and supported.">重视 · 识别 · 理解 · 建设 · 求助 —— 让每一个孩子都被看见、倾听、陪伴、帮助。</p>
+        <div class="hero-quote" data-zh="“少年不知愁滋味，爱上层楼。爱上层楼，为赋新词强作愁。” —— 辛弃疾｜成人常误以为孩子没有真烦恼，却忽略了他们正处于变化剧烈的成长坐标中。" data-en="Adults often assume youth 'know no real sorrow,' overlooking how rapid tech, academic pressure, and social change reshape their world.">“少年不知愁滋味，爱上层楼。爱上层楼，为赋新词强作愁。” —— 辛弃疾｜成人常误以为孩子没有真烦恼，却忽略了他们正处于变化剧烈的成长坐标中。</div>
+        <div class="hero-goals">
+          <div class="hero-goal">
+            <strong data-zh="1. 认识紧迫性" data-en="1. See the Urgency">1. 认识紧迫性</strong>
+            <span data-zh="看清中马两地青少年心理健康调查数据与学段分布" data-en="Understand data trends across school stages">看清中马两地青少年心理健康调查数据与学段分布</span>
+          </div>
+          <div class="hero-goal">
+            <strong data-zh="2. 学会识别风险" data-en="2. Spot Risk Signals">2. 学会识别风险</strong>
+            <span data-zh="区分发展性正常、心理问题与临床障碍信号" data-en="Distinguish normal growth from clinical risks">区分发展性正常、心理问题与临床障碍信号</span>
+          </div>
+          <div class="hero-goal">
+            <strong data-zh="3. 理解形成机制" data-en="3. Grasp Mechanisms">3. 理解形成机制</strong>
+            <span data-zh="掌握个体、家庭、学校、社会四层叠加影响" data-en="See individual, family, school & social factors">掌握个体、家庭、学校、社会四层叠加影响</span>
+          </div>
+          <div class="hero-goal">
+            <strong data-zh="4. 落实建设清单" data-en="4. Take Action">4. 落实建设清单</strong>
+            <span data-zh="掌握校园、家庭沟通话术与危机转介路径" data-en="Apply communication scripts & referral pathways">掌握校园、家庭沟通话术与危机转介路径</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 0: Intro -->
+      <section class="section-block" id="sec-intro">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="导言 · WHY IT MATTERS" data-en="INTRODUCTION · WHY IT MATTERS">导言 · WHY IT MATTERS</div>
+            <h2 class="section-title" data-zh="破除误解与“病耻感”" data-en="Overcoming Misconceptions & Stigma">破除误解与“病耻感”</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-intro" type="button">标记已读</button>
+        </div>
+
+        <p data-zh="我们正处在一个技术迭代加速、价值观念多元、学业竞争与不确定性层层加码的时代。点击下方带虚线的专业词汇，可随时查看中英文对照与释义。" data-en="We live in an era of rapid tech shifts, diverse values, and compounding academic pressure. Hover or tap any underlined term below for bilingual definitions.">
+          我们正处在一个技术迭代加速、价值观念多元、学业竞争与不确定性层层加码的时代。点击下方带虚线的专业词汇，可随时查看中英文对照与释义。
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <h4 data-zh="成人的常见误解" data-en="Adult Misconceptions">成人的常见误解</h4>
+            <p data-zh="认为“少年不知愁滋味”或“孩子的脸是六月的天，难过一会就好”，低估了青少年情绪痛苦的真实强度。" data-en="Assuming teens 'know no real sorrow' or bounce back quickly, underestimating genuine emotional distress.">认为“少年不知愁滋味”或“孩子的脸是六月的天，难过一会就好”，低估了青少年情绪痛苦的真实强度。</p>
+          </div>
+          <div class="info-card">
+            <h4><span class="term-pill" data-term="stigma" data-zh="病耻感 (Stigma)" data-en="Stigma (病耻感)">病耻感 (Stigma)</span></h4>
+            <p data-zh="人们常把心理问题等同于“危险、疯狂、遗传、丢人、无法治疗”，加上亚洲文化“以和为贵”鼓励压抑情绪，导致孩子刻意隐瞒。" data-en="Viewing mental struggles as 'dangerous, crazy, or shameful'—plus cultural norms favoring emotional suppression—causes youth to hide pain.">人们常把心理问题等同于“危险、疯狂、遗传、丢人、无法治疗”，加上亚洲文化“以和为贵”鼓励压抑情绪，导致孩子刻意隐瞒。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="延误求助的后果" data-en="Cost of Delay">延误求助的后果</h4>
+            <p data-zh="错过最佳干预窗口，使可调适的困扰演变为严重心理障碍甚至极端危机（如高一学生胡鑫宇悲剧、校园恶性事件）。" data-en="Missing the golden intervention window allows manageable distress to escalate into severe disorders or tragic crises.">错过最佳干预窗口，使可调适的困扰演变为严重心理障碍甚至极端危机（如高一学生胡鑫宇悲剧、校园恶性事件）。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: Prevalence -->
+      <section class="section-block" id="sec-prevalence">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="第一部分 · DATA INSIGHTS" data-en="PART 1 · DATA INSIGHTS">第一部分 · DATA INSIGHTS</div>
+            <h2 class="section-title" data-zh="青少年心理健康问题的普遍性" data-en="Prevalence of Adolescent Mental Health Issues">青少年心理健康问题的普遍性</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-prevalence" type="button">标记已读</button>
+        </div>
+
+        <h3 class="sub-heading" data-zh="📊 学段分布元分析（切换学段查看数据）" data-en="📊 Meta-Analysis by School Stage (Click to Switch)">📊 学段分布元分析（切换学段查看数据）</h3>
+        <div class="tab-bar">
+          <button class="tab-btn stage-tab-btn" data-stage="primary" type="button" data-zh="小学生 Primary" data-en="Primary School">小学生 Primary</button>
+          <button class="tab-btn stage-tab-btn active" data-stage="middle" type="button" data-zh="初中生 Middle" data-en="Middle School">初中生 Middle</button>
+          <button class="tab-btn stage-tab-btn" data-stage="high" type="button" data-zh="高中生 High" data-en="High School">高中生 High</button>
+          <button class="tab-btn stage-tab-btn" data-stage="college" type="button" data-zh="大学生 University" data-en="University">大学生 University</button>
+        </div>
+        <div id="stageNote" class="callout sage" style="margin-top:0;"></div>
+        <div class="stat-bars" id="stageStatsContainer"></div>
+
+        <h3 class="sub-heading" data-zh="🌏 马来西亚与中国权威调查亮点" data-en="🌏 Key Survey Findings: Malaysia & China">🌏 马来西亚与中国权威调查亮点</h3>
+        <div class="grid-2">
+          <div class="info-card">
+            <h4 data-zh="🇲🇾 马来西亚青少年心理状况" data-en="🇲🇾 Malaysia Youth Mental Health">🇲🇾 马来西亚青少年心理状况</h4>
+            <ul>
+              <li data-zh="<strong>NHMS 国家健康与发病率调查：</strong>13–17岁青少年抑郁率从 2017 年 <strong>18.3%</strong> 攀升至 2022 年 <strong>26.9%</strong>；焦虑症状检出率 <strong>39.7%</strong>；10% 曾有自杀意念。" data-en="<strong>NHMS Survey:</strong> Depression among 13–17y rose from <strong>18.3%</strong> (2017) to <strong>26.9%</strong> (2022); anxiety <strong>39.7%</strong>; 10% suicidal ideation."><strong>NHMS 国家健康与发病率调查：</strong>13–17岁青少年抑郁率从 2017 年 <strong>18.3%</strong> 攀升至 2022 年 <strong>26.9%</strong>；焦虑症状检出率 <strong>39.7%</strong>；10% 曾有自杀意念。</li>
+              <li data-zh="<strong>2023 UNICEF × IYRES 报告：</strong>每 10 名青年中有 <strong>6 人</strong>存在轻至重度抑郁症状，<strong>3 人</strong>有中至重度焦虑症状。" data-en="<strong>2023 UNICEF × IYRES:</strong> 6 in 10 youth show mild-to-severe depressive symptoms; 3 in 10 show moderate-to-severe anxiety."><strong>2023 UNICEF × IYRES 报告：</strong>每 10 名青年中有 <strong>6 人</strong>存在轻至重度抑郁症状，<strong>3 人</strong>有中至重度焦虑症状。</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="🇨🇳 《中国国民心理健康发展报告》等" data-en="🇨🇳 National Mental Health Reports">🇨🇳 《中国国民心理健康发展报告》等</h4>
+            <ul>
+              <li data-zh="<strong>2023–2024 抑郁检出率：</strong>总体 <strong>24.6%</strong>（小学10%、初中30%、高中40%），首次确诊平均年龄低至 <strong>13.4岁</strong>。" data-en="<strong>2023–2024 Depression Rate:</strong> 24.6% overall (Primary 10%, Middle 30%, High 40%); average age at first diagnosis is <strong>13.4 years</strong>."><strong>2023–2024 抑郁检出率：</strong>总体 <strong>24.6%</strong>（小学10%、初中30%、高中40%），首次确诊平均年龄低至 <strong>13.4岁</strong>。</li>
+              <li data-zh="<strong>就诊增速与流行病学：</strong>6–16岁在校生约 <strong>17.5%</strong> 患有精神障碍；未成年人就诊占比增长显著高于成年人。" data-en="<strong>Clinical Trends:</strong> ~17.5% of students aged 6–16 meet criteria for a mental disorder, with pediatric visits surging faster than adults."><strong>就诊增速与流行病学：</strong>6–16岁在校生约 <strong>17.5%</strong> 患有精神障碍；未成年人就诊占比增长显著高于成年人。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Spectrum & Disorders -->
+      <section class="section-block" id="sec-spectrum">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="第二部分 · SPECTRUM & IDENTIFICATION" data-en="PART 2 · SPECTRUM & IDENTIFICATION">第二部分 · SPECTRUM & IDENTIFICATION</div>
+            <h2 class="section-title" data-zh="心理健康、问题与异常谱系" data-en="Mental Health, Problems & Disorders Spectrum">心理健康、问题与异常谱系</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-spectrum" type="button">标记已读</button>
+        </div>
+
+        <h3 class="sub-heading" data-zh="💡 什么是真正的心理健康？三个“不要混淆”" data-en="💡 What Is True Well-being? Three Key Distinctions">💡 什么是真正的心理健康？三个“不要混淆”</h3>
+        <p data-zh="WHO（2001）定义：<span class='term-pill' data-term='wellbeing'>心理健康（Well-being）</span>不是“从不焦虑、永远开心”，而是情绪波动后能慢慢平复、内向安静也能健康、知道何时需要求助。" data-en="WHO (2001): <span class='term-pill' data-term='wellbeing'>Well-being</span> is not being happy 100% of the time—it is recovering after emotional waves and knowing when to seek help.">
+          WHO（2001）定义：<span class="term-pill" data-term="wellbeing">心理健康（Well-being）</span>不是“从不焦虑、永远开心”，而是情绪波动后能慢慢平复、内向安静也能健康、知道何时需要求助。
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <h4 data-zh="叛逆期 ≠ 病理" data-en="Rebellion ≠ Pathology">叛逆期 ≠ 病理</h4>
+            <p data-zh="顶嘴、关门、追求独立是青少年期的正常发展任务。" data-en="Talking back, closing doors, and seeking autonomy are normal developmental milestones.">顶嘴、关门、追求独立是青少年期的正常发展任务。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="内向 ≠ 孤僻" data-en="Introversion ≠ Isolation">内向 ≠ 孤僻</h4>
+            <p data-zh="独处充电是气质特点；回避一切社交与兴趣才需要留意。" data-en="Recharging alone is temperament; withdrawing from all friends and interests is a warning.">独处充电是气质特点；回避一切社交与兴趣才需要留意。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="成绩好 ≠ 心理好" data-en="Good Grades ≠ Good Health">成绩好 ≠ 心理好</h4>
+            <p data-zh="“好学生”往往最擅长隐藏挣扎，表面平稳不等于内在无痛。" data-en="'Top students' are often skilled at masking distress; calm exteriors can hide deep pain.">“好学生”往往最擅长隐藏挣扎，表面平稳不等于内在无痛。</p>
+          </div>
+        </div>
+
+        <div class="callout info">
+          <strong data-zh="🧠 读懂青春期大脑与生理特点（勿把“发展中的正常”误读为“故意对抗”）：" data-en="🧠 Adolescent Brain & Biology (Don't misread development as defiance):">🧠 读懂青春期大脑与生理特点（勿把“发展中的正常”误读为“故意对抗”）：</strong>
+          <span data-zh="① 情绪“油门灵、刹车慢”：负责冲动控制的<span class='term-pill' data-term='prefrontal'>前额叶皮层</span> 25岁左右才成熟；② 睡眠节律生理性后移：褪黑素峰值在凌晨 2–3 点，缺觉会放大情绪问题；③ 同伴排挤激活的大脑区域与生理疼痛高度重叠；④ 自我意识增强、对公平较真。" data-en="(1) Fast emotional gas pedal, slow brakes: the <span class='term-pill' data-term='prefrontal'>prefrontal cortex</span> matures around age 25; (2) Melatonin peaks at 2–3 AM, causing chronic sleep debt; (3) Social exclusion activates physical pain centers; (4) Heightened sensitivity to fairness & identity.">
+            ① 情绪“油门灵、刹车慢”：负责冲动控制的<span class="term-pill" data-term="prefrontal">前额叶皮层</span> 25岁左右才成熟；② 睡眠节律生理性后移：褪黑素峰值在凌晨 2–3 点，缺觉会放大情绪问题；③ 同伴排挤激活的大脑区域与生理疼痛高度重叠；④ 自我意识增强、对公平较真。
+          </span>
+        </div>
+
+        <h3 class="sub-heading" data-zh="📐 心理问题严重程度三级区分与神经症 6 分标准" data-en="📐 3 Levels of Psychological Problems & Neurosis Scoring">📐 心理问题严重程度三级区分与神经症 6 分标准</h3>
+        <div class="grid-3">
+          <div class="info-card">
+            <h4 data-zh="一般（发展性）心理问题" data-en="General / Developmental">一般（发展性）心理问题</h4>
+            <p data-zh="由现实压力或适应引起，持续 <strong>2 个月以内</strong>，理智可控制，情绪未泛化，不严重破坏学习与社交功能。" data-en="Triggered by real-life stress, lasts <strong>&lt;2 months</strong>, within rational control, non-generalized.">由现实压力或适应引起，持续 <strong>2 个月以内</strong>，理智可控制，情绪未泛化，不严重破坏学习与社交功能。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="严重心理问题" data-en="Severe Psychological Problem">严重心理问题</h4>
+            <p data-zh="由较强烈现实因素激发，持续 <strong>2–6 个月</strong>，情绪强烈且内容已充分泛化（如重大失恋/受挫后波及全盘生活）。" data-en="Intense trigger, lasts <strong>2–6 months</strong>, emotional distress generalizes across life areas.">由较强烈现实因素激发，持续 <strong>2–6 个月</strong>，情绪强烈且内容已充分泛化（如重大失恋/受挫后波及全盘生活）。</p>
+          </div>
+          <div class="info-card">
+            <h4><span class="term-pill" data-term="neurosis" data-zh="神经症性问题（6分标准）" data-en="Neurotic / Neurosis (6-Pt Rule)">神经症性问题（6分标准）</span></h4>
+            <p data-zh="心理冲突与现实无关。按<strong>病程(1-3分) + 痛苦程度(1-3分) + 社会功能受损(1-3分)</strong>评估：3–5 分为神经症性问题，<strong>总分 &gt;6 分</strong>诊断为神经症。" data-en="Conflict detached from reality. Sum of Duration (1–3) + Distress (1–3) + Impairment (1–3): 3–5 = subthreshold, <strong>&gt;6 = Neurosis</strong>.">心理冲突与现实无关。按<strong>病程(1-3分) + 痛苦程度(1-3分) + 社会功能受损(1-3分)</strong>评估：3–5 分为神经症性问题，<strong>总分 &gt;6 分</strong>诊断为神经症。</p>
+          </div>
+        </div>
+
+        <h3 class="sub-heading" data-zh="🔍 常见心理问题与危机识别库（点击卡片展开“课堂信号”与“应对策略”）" data-en="🔍 Condition & Risk Explorer (Click any card for Signals & Teacher Actions)">🔍 常见心理问题与危机识别库（点击卡片展开“课堂信号”与“应对策略”）</h3>
+        <div class="tab-bar">
+          <button class="tab-btn cat-filter-btn active" data-cat="all" type="button" data-zh="全部 (16)" data-en="All (16)">全部 (16)</button>
+          <button class="tab-btn cat-filter-btn" data-cat="mood" type="button" data-zh="情绪与焦虑" data-en="Mood & Anxiety">情绪与焦虑</button>
+          <button class="tab-btn cat-filter-btn" data-cat="neuro" type="button" data-zh="神经发育与行为" data-en="Neurodevelopmental">神经发育与行为</button>
+          <button class="tab-btn cat-filter-btn" data-cat="somatic" type="button" data-zh="躯体、睡眠与成瘾" data-en="Somatic, Sleep & Addiction">躯体、睡眠与成瘾</button>
+          <button class="tab-btn cat-filter-btn" data-cat="crisis" type="button" data-zh="🚨 危机与创伤" data-en="🚨 Crisis & Trauma">🚨 危机与创伤</button>
+        </div>
+
+        <div class="disorder-grid" id="disorderList"></div>
+      </section>
+
+      <!-- Section 3: Mechanism -->
+      <section class="section-block" id="sec-mechanism">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="第三部分 · FORMATION MECHANISM" data-en="PART 3 · FORMATION MECHANISM">第三部分 · FORMATION MECHANISM</div>
+            <h2 class="section-title" data-zh="四因素共同作用机制" data-en="Four-Layer Formation Mechanism">四因素共同作用机制</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-mechanism" type="button">标记已读</button>
+        </div>
+
+        <p data-zh="青少年心理问题不是单一原因造成的，而是以下四个层面叠加的结果——正因为是“叠加”，建设才有多个着力点：<strong>任何一层松动，整体风险都会下降</strong>。" data-en="Adolescent mental health issues result from four overlapping layers—which means <strong>easing pressure on any single layer lowers overall risk</strong>.">
+          青少年心理问题不是单一原因造成的，而是以下四个层面叠加的结果——正因为是“叠加”，建设才有多个着力点：<strong>任何一层松动，整体风险都会下降</strong>。
+        </p>
+
+        <div class="grid-4">
+          <div class="info-card">
+            <h4 data-zh="1. 个体层 Individual" data-en="1. Individual">1. 个体层 Individual</h4>
+            <ul>
+              <li data-zh="气质与神经发育差异" data-en="Temperament & neurodiversity">气质与神经发育差异</li>
+              <li data-zh="青春期激素波动" data-en="Pubertal hormone shifts">青春期激素波动</li>
+              <li data-zh="睡眠节律紊乱" data-en="Sleep rhythm disruption">睡眠节律紊乱</li>
+              <li data-zh="慢性躯体疾病与既往创伤" data-en="Chronic illness & past trauma">慢性躯体疾病与既往创伤</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="2. 家庭层 Family" data-en="2. Family">2. 家庭层 Family</h4>
+            <ul>
+              <li data-zh="亲子沟通缺失" data-en="Lack of parent-child communication">亲子沟通缺失</li>
+              <li data-zh="期望过高或过度控制" data-en="Excessive expectations / control">期望过高或过度控制</li>
+              <li data-zh="父母关系紧张 / 家庭变故" data-en="Marital conflict / family crisis">父母关系紧张 / 家庭变故</li>
+              <li data-zh="留守流动、虐待或忽视" data-en="Neglect, abuse, or separation">留守流动、虐待或忽视</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="3. 学校层 School" data-en="3. School">3. 学校层 School</h4>
+            <ul>
+              <li data-zh="学业评价单一与竞争高压" data-en="Single-metric academic pressure">学业评价单一与竞争高压</li>
+              <li data-zh="同伴欺凌与排挤" data-en="Peer bullying & exclusion">同伴欺凌与排挤</li>
+              <li data-zh="教师高压传导" data-en="Teacher stress spillover">教师高压传导</li>
+              <li data-zh="心理师资与课程不足" data-en="Limited counseling resources">心理师资与课程不足</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="4. 社会层 Society" data-en="4. Society">4. 社会层 Society</h4>
+            <ul>
+              <li data-zh="网络沉迷诱惑与网络欺凌" data-en="Digital addiction & cyberbullying">网络沉迷诱惑与网络欺凌</li>
+              <li data-zh="唯分数的社会评价体系" data-en="Score-obsessed social norms">唯分数的社会评价体系</li>
+              <li data-zh="专业心理服务资源缺口" data-en="Shortage of professional care">专业心理服务资源缺口</li>
+              <li data-zh="病耻感阻碍及时求助" data-en="Stigma blocking help-seeking">病耻感阻碍及时求助</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: 3-Tier Building -->
+      <section class="section-block" id="sec-building">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="第四部分 · SYSTEMATIC BUILDING" data-en="PART 4 · SYSTEMATIC BUILDING">第四部分 · SYSTEMATIC BUILDING</div>
+            <h2 class="section-title" data-zh="三级建设与家校社行动指南" data-en="Three-Tier System & Practical Guides">三级建设与家校社行动指南</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-building" type="button">标记已读</button>
+        </div>
+
+        <h3 class="sub-heading" data-zh="🏫 学校：五育并举 · 四点落实" data-en="🏫 School: Holistic Education & 4 Pillars">🏫 学校：五育并举 · 四点落实</h3>
+        <div class="grid-2">
+          <div class="info-card">
+            <h4 data-zh="五育润心" data-en="Five-Fold Mental Nourishment">五育润心</h4>
+            <ul>
+              <li data-zh="<strong>以德育心：</strong>价值感与归属感是心理健康地基" data-en="<strong>Moral:</strong> Purpose & belonging form the foundation"><strong>以德育心：</strong>价值感与归属感是心理健康地基</li>
+              <li data-zh="<strong>以智慧心：</strong>认知训练与成长型思维面对挫折" data-en="<strong>Intellectual:</strong> Growth mindset for setbacks"><strong>以智慧心：</strong>认知训练与成长型思维面对挫折</li>
+              <li data-zh="<strong>以体强心：</strong>运动是最廉价、证据最充分的情绪调节剂" data-en="<strong>Physical:</strong> Exercise is the most evidence-backed mood regulator"><strong>以体强心：</strong>运动是最廉价、证据最充分的情绪调节剂</li>
+              <li data-zh="<strong>以美润心 & 以劳健心：</strong>审美滋养积极情绪，真实任务塑造胜任感" data-en="<strong>Aesthetic & Labor:</strong> Art nurtures joy; real tasks build competence"><strong>以美润心 & 以劳健心：</strong>审美滋养积极情绪，真实任务塑造胜任感</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="四点落地机制" data-en="4 Operational Pillars">四点落地机制</h4>
+            <ul>
+              <li data-zh="<strong>01 课程：</strong>心理课正式进课表，不被挤占" data-en="<strong>01 Curriculum:</strong> Dedicated mental health classes"><strong>01 课程：</strong>心理课正式进课表，不被挤占</li>
+              <li data-zh="<strong>02 预警：</strong>新生测评 + 日常动态观察 + 危机预案三线互通" data-en="<strong>02 Early Warning:</strong> Screening + daily observation + crisis protocol"><strong>02 预警：</strong>新生测评 + 日常动态观察 + 危机预案三线互通</li>
+              <li data-zh="<strong>03 师资：</strong>每校至少 1 名专/兼职心理教师，全员教师受训" data-en="<strong>03 Staff:</strong> Trained counselor + mental health literacy for all teachers"><strong>03 师资：</strong>每校至少 1 名专/兼职心理教师，全员教师受训</li>
+              <li data-zh="<strong>04 氛围：</strong>零容忍欺凌；把体育、睡眠与课间还给孩子；求助不贴标签" data-en="<strong>04 Climate:</strong> Zero bullying; protect sleep/recess; zero-stigma help"><strong>04 氛围：</strong>零容忍欺凌；把体育、睡眠与课间还给孩子；求助不贴标签</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="sub-heading" data-zh="🏡 家庭沟通：别这样说 vs 可以这样说" data-en="🏡 Family Communication: What Not to Say vs. What Helps">🏡 家庭沟通：别这样说 vs 可以这样说</h3>
+        <p data-zh="关系先于教育：先共情（复述感受）与倾听（先问“最近发生了什么”），再谈建议。运用<span class='term-pill' data-term='nvc'>非暴力沟通（观察—感受—需要—请求）</span>替代吼叫与比较。" data-en="Connection before correction: empathize and listen first. Use <span class='term-pill' data-term='nvc'>Nonviolent Communication (Observation, Feeling, Need, Request)</span> instead of blaming.">
+          关系先于教育：先共情（复述感受）与倾听（先问“最近发生了什么”），再谈建议。运用<span class="term-pill" data-term="nvc">非暴力沟通（观察—感受—需要—请求）</span>替代吼叫与比较。
+        </p>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="col-no" data-zh="❌ 别这样说（制造羞耻与关闭沟通）" data-en="❌ Avoid Saying (Shames & Shuts Down)">❌ 别这样说（制造羞耻与关闭沟通）</th>
+              <th class="col-yes" data-zh="✅ 可以这样说（接纳、去耻感、支持）" data-en="✅ Say This Instead (Validates & Supports)">✅ 可以这样说（接纳、去耻感、支持）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-zh="别人都没事，怎么就你不行？你就是脆弱/矫情。" data-en="Everyone else is fine—why are you so fragile?">别人都没事，怎么就你不行？你就是脆弱/矫情。</td>
+              <td data-zh="心理困扰像感冒一样常见，是健康问题不是软弱。" data-en="Emotional struggles are as common as a cold—a health issue, not weakness.">心理困扰像感冒一样常见，是健康问题不是软弱。</td>
+            </tr>
+            <tr>
+              <td data-zh="熬一熬，长大自然就好了，不用大惊小怪。" data-en="Just tough it out, you'll grow out of it.">熬一熬，长大自然就好了，不用大惊小怪。</td>
+              <td data-zh="拖延会让小问题拖成大病；越早重视、恢复效果越好。" data-en="Delaying turns small issues into big ones; early care works best.">拖延会让小问题拖成大病；越早重视、恢复效果越好。</td>
+            </tr>
+            <tr>
+              <td data-zh="去看心理科 = 精神有问题，传出去多丢人。" data-en="Seeing a psychiatrist means you're crazy—how shameful!">去看心理科 = 精神有问题，传出去多丢人。</td>
+              <td data-zh="咨询与就诊是正常的健康行为，我们一起面对。" data-en="Seeking counseling is normal healthcare; we'll face this together.">咨询与就诊是正常的健康行为，我们一起面对。</td>
+            </tr>
+            <tr>
+              <td data-zh="成绩下滑就是不够努力，别拿心理状态当借口。" data-en="Dropping grades just means laziness, stop making excuses.">成绩下滑就是不够努力，别拿心理状态当借口。</td>
+              <td data-zh="持续成绩骤降往往是心理痛苦的结果而非原因，最近怎么了？" data-en="A sudden grade drop is often a symptom of distress, not the cause. What's been happening?">持续成绩骤降往往是心理痛苦的结果而非原因，最近怎么了？</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub-heading" data-zh="🤝 同伴陪伴 4 步 & 孩子自护 4 步（情绪会下雨，但你不是孤岛）" data-en="🤝 Peer Support & Youth Self-Care (4 Steps Each)">🤝 同伴陪伴 4 步 & 孩子自护 4 步（情绪会下雨，但你不是孤岛）</h3>
+        <div class="grid-2" style="margin-bottom:16px;">
+          <div class="info-card">
+            <h4 data-zh="同伴：做一个不转身离开的朋友" data-en="Peers: Be a Friend Who Stays">同伴：做一个不转身离开的朋友</h4>
+            <ul>
+              <li data-zh="<strong>1. 认真听不评判：</strong>不敷衍、不嘲笑、不外传。" data-en="<strong>1. Listen without judging:</strong> Never dismiss or gossip."><strong>1. 认真听不评判：</strong>不敷衍、不嘲笑、不外传。</li>
+              <li data-zh="<strong>2. 感到风险：</strong>绝不丢下他一个人，尽快告知可信任的成年人。" data-en="<strong>2. Spot risk:</strong> Never leave them alone; tell a trusted adult."><strong>2. 感到风险：</strong>绝不丢下他一个人，尽快告知可信任的成年人。</li>
+              <li data-zh="<strong>3. 陪他求助：</strong>陪他一起找心理老师、家长或拨打热线。" data-en="<strong>3. Accompany to help:</strong> Go together to a counselor or call a helpline."><strong>3. 陪他求助：</strong>陪他一起找心理老师、家长或拨打热线。</li>
+              <li data-zh="<strong>4. 守住底线：</strong>发现自伤、轻生信号时，必须<strong>突破保密</strong>立即报告！" data-en="<strong>4. Safety first:</strong> Break confidentiality immediately if self-harm/suicide is hinted."><strong>4. 守住底线：</strong>发现自伤、轻生信号时，必须<strong>突破保密</strong>立即报告！</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="孩子：求助不是认输，不必一个人硬抗" data-en="Youth: Seeking Help Is Strength">孩子：求助不是认输，不必一个人硬抗</h4>
+            <ul>
+              <li data-zh="<strong>1. 说出来：</strong>向信任的家人、朋友或老师倾诉分担。" data-en="<strong>1. Speak up:</strong> Share with a trusted family member, friend, or teacher."><strong>1. 说出来：</strong>向信任的家人、朋友或老师倾诉分担。</li>
+              <li data-zh="<strong>2. 松下来：</strong>保证睡眠地基、深呼吸、听音乐、暂离压力源。" data-en="<strong>2. Unwind:</strong> Protect sleep, breathe deeply, step back from stressors."><strong>2. 松下来：</strong>保证睡眠地基、深呼吸、听音乐、暂离压力源。</li>
+              <li data-zh="<strong>3. 动起来：</strong>每天运动 30 分钟，体验身体自控的力量。" data-en="<strong>3. Move:</strong> 30 minutes of daily exercise to restore agency."><strong>3. 动起来：</strong>每天运动 30 分钟，体验身体自控的力量。</li>
+              <li data-zh="<strong>4. 求帮助：</strong>像感冒看医生一样去学校咨询室或拨打热线。" data-en="<strong>4. Get care:</strong> Visit the school counselor or call a helpline."><strong>4. 求帮助：</strong>像感冒看医生一样去学校咨询室或拨打热线。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="sub-heading" data-zh="⚡ 教师发现风险的四步标准流程" data-en="⚡ 4-Step Risk Response Protocol for Teachers">⚡ 教师发现风险的四步标准流程</h3>
+        <div class="grid-4">
+          <div class="info-card">
+            <h4 data-zh="① 发现 Observe" data-en="① Observe">① 发现 Observe</h4>
+            <p data-zh="私下记录信号的种类、频率与持续时间，不当众询问，保护学生尊严。" data-en="Document type, frequency, and duration privately; never confront in front of peers.">私下记录信号的种类、频率与持续时间，不当众询问，保护学生尊严。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="② 交谈 Connect" data-en="② Connect">② 交谈 Connect</h4>
+            <p data-zh="不指责、开放式询问：“你最近好像很累，想说说吗？”先倾听，不急着给建议。" data-en="Open, non-judgmental check-in: 'You seem exhausted lately—want to talk?' Listen first.">不指责、开放式询问：“你最近好像很累，想说说吗？”先倾听，不急着给建议。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="③ 评估 Assess" data-en="③ Assess">③ 评估 Assess</h4>
+            <p data-zh="教师不自行下诊断！将观察记录交给学校心理老师或专业人员评估。" data-en="Teachers do not diagnose—hand observations to the school counselor or clinicians.">教师不自行下诊断！将观察记录交给学校心理老师或专业人员评估。</p>
+          </div>
+          <div class="info-card">
+            <h4 data-zh="④ 转介与陪伴 Refer" data-en="④ Refer & Follow Up">④ 转介与陪伴 Refer</h4>
+            <p data-zh="高风险立即联系监护人，转介精神专科医院，返校后持续给予温暖关心。" data-en="For high risk, contact guardians immediately, refer to psychiatric care, and support upon return.">高风险立即联系监护人，转介精神专科医院，返校后持续给予温暖关心。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Helplines, Quiz & Checklist -->
+      <section class="section-block" id="sec-help">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" data-zh="第五部分 · HELP & PRACTICE" data-en="PART 5 · HELP & PRACTICE">第五部分 · HELP & PRACTICE</div>
+            <h2 class="section-title" data-zh="求助资源、情景测验与行动清单" data-en="Helplines, Scenario Quiz & Action Checklist">求助资源、情景测验与行动清单</h2>
+          </div>
+          <button class="mark-done-btn" data-sec="sec-help" type="button">标记已读</button>
+        </div>
+
+        <h3 class="sub-heading" data-zh="📞 马来西亚紧急与专业求助渠道（点击一键复制号码）" data-en="📞 Malaysia Support & Crisis Helplines (Click to Copy)">📞 马来西亚紧急与专业求助渠道（点击一键复制号码）</h3>
+        <div class="grid-2">
+          <div class="helpline-card">
+            <div>
+              <strong data-zh="Buddy Bear 儿童青少年热线（6–18岁）" data-en="Buddy Bear Helpline (Ages 6–18)">Buddy Bear 儿童青少年热线（6–18岁）</strong>
+              <div class="helpline-num">1800-18-2327</div>
+            </div>
+            <button class="copy-btn" data-copy="1800-18-2327" type="button">复制</button>
+          </div>
+          <div class="helpline-card">
+            <div>
+              <strong data-zh="国家心理健康援助热线（Talian HEAL）" data-en="National Mental Health Helpline (Talian HEAL)">国家心理健康援助热线（Talian HEAL）</strong>
+              <div class="helpline-num">15555</div>
+            </div>
+            <button class="copy-btn" data-copy="15555" type="button">复制</button>
+          </div>
+          <div class="helpline-card">
+            <div>
+              <strong data-zh="马来西亚生命线协会（华语可选）" data-en="Life Line Association Malaysia (Mandarin)">马来西亚生命线协会（华语可选）</strong>
+              <div class="helpline-num">03-4265 7995</div>
+            </div>
+            <button class="copy-btn" data-copy="03-4265 7995" type="button">复制</button>
+          </div>
+          <div class="helpline-card">
+            <div>
+              <strong data-zh="紧急救援（自伤/伤人，不离人不争论）" data-en="Emergency (Self-harm/Danger: Stay with student)">紧急救援（自伤/伤人，不离人不争论）</strong>
+              <div class="helpline-num">999</div>
+            </div>
+            <button class="copy-btn" data-copy="999" type="button">复制</button>
+          </div>
+        </div>
+        <div class="callout sage">
+          <span data-zh="🏥 <strong>线下医疗资源：</strong>学校心理咨询室、政府医院精神科，以及卫生部社区心理健康诊所 <span class='term-pill' data-term='mentari'>Klinik MENTARI</span>。" data-en="🏥 <strong>In-Person Care:</strong> School counseling room, government hospital psychiatry, and MOH community clinic <span class='term-pill' data-term='mentari'>Klinik MENTARI</span>.">
+            🏥 <strong>线下医疗资源：</strong>学校心理咨询室、政府医院精神科，以及卫生部社区心理健康诊所 <span class="term-pill" data-term="mentari">Klinik MENTARI</span>。
+          </span>
+        </div>
+
+        <h3 class="sub-heading" data-zh="🧩 教师课堂情景模拟小测验" data-en="🧩 Teacher Classroom Scenario Quiz">🧩 教师课堂情景模拟小测验</h3>
+        <div id="quizContainer"></div>
+
+        <h3 class="sub-heading" data-zh="✅ 培训后立刻可做的 5 件小事（自动保存勾选进度）" data-en="✅ 5 Immediate Actions After Training (Auto-saved)">✅ 培训后立刻可做的 5 件小事（自动保存勾选进度）</h3>
+        <div class="checklist" id="actionChecklist"></div>
+      </section>
+      </div><!-- End #view-m1 -->
+
+      <!-- ==================== MODULE 2: CLASSROOM MANAGEMENT ==================== -->
+      <div class="module-view" id="view-m2">
+        <section class="hero">
+          <div class="hero-top-row">
+            <div class="hero-eyebrow" data-zh="课程 02 / 04 · 2026年11月13日" data-en="Module 02 / 04 · 13 Nov 2026">课程 02 / 04 · 2026年11月13日</div>
+            <a class="pdf-btn" href="pdfs/02-classroom-management.pdf" target="_blank" rel="noopener noreferrer" data-zh="📄 打开讲师原版 PDF" data-en="📄 Open Slides PDF">📄 打开讲师原版 PDF</a>
+          </div>
+          <h1 data-zh="课堂教学管理实用方法及策略" data-en="Practical Classroom Management Strategies">课堂教学管理实用方法及策略</h1>
+          <p class="hero-sub" data-zh="从“情绪灭火”到“系统管理”的全流程实操指南（73 页深度解析）" data-en="From Emotional Firefighting to Systemic Management — A Full-Process Practical Guide">从“情绪灭火”到“系统管理”的全流程实操指南（73 页深度解析）</p>
+          <div class="hero-goals">
+            <div class="hero-goal">
+              <strong data-zh="01 理念破局" data-en="01 Mindset Shift">01 理念破局</strong>
+              <span data-zh="看懂为什么高压吼叫只有 5 分钟有效期" data-en="Why yelling only lasts 5 minutes">看懂为什么高压吼叫只有 5 分钟有效期</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="02 防患未然" data-en="02 Prevention">02 防患未然</strong>
+              <span data-zh="用物理环境、程序口令与课堂节奏消灭 90% 纪律问题" data-en="Prevent 90% of issues via space, routines & pacing">用物理环境、程序口令与课堂节奏消灭 90% 纪律问题</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="03 零吼叫干预" data-en="03 Zero-Yell Action">03 零吼叫干预</strong>
+              <span data-zh="三级眼神、近距站位与“事实→动作→边界”话术" data-en="Non-verbal cues & actionable scripts">三级眼神、近距站位与“事实→动作→边界”话术</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="04 长效赋能" data-en="04 Culture & Habits">04 长效赋能</strong>
+              <span data-zh="契约规则、非物质奖励与家校合伙人沟通" data-en="Shared class agreements & parent alliance">契约规则、非物质奖励与家校合伙人沟通</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- M2 Section 1 -->
+        <section class="section-block" id="m2-mindset">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 01 · MINDSET SHIFT" data-en="PART 01 · MINDSET SHIFT">PART 01 · MINDSET SHIFT</div>
+              <h2 class="section-title" data-zh="理念破局：吼叫为什么只有五分钟有效期？" data-en="Why Yelling Only Lasts 5 Minutes">理念破局：吼叫为什么只有五分钟有效期？</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m2" data-sec="m2-mindset" type="button">标记已读</button>
+          </div>
+          <div class="grid-3">
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="amygdala_hijack" data-zh="① 杏仁核被“劫持”" data-en="① Amygdala Hijack">① 杏仁核被“劫持”</span></h4>
+              <p data-zh="大吼触发“战斗/逃跑/冻结”本能，抑制理性思考的前额叶。学生闭嘴了，但认知通道已关闭——他们不是在听课，是在等威胁过去。" data-en="Shouting triggers fight/flight/freeze, shutting down the prefrontal cortex. Students go silent, but stop learning.">大吼触发“战斗/逃跑/冻结”本能，抑制理性思考的前额叶。学生闭嘴了，但认知通道已关闭——他们不是在听课，是在等威胁过去。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="sensory_adaptation" data-zh="② 感觉适应与纸老虎" data-en="② Adaptation & Paper Tiger">② 感觉适应与纸老虎</span></h4>
+              <p data-zh="持续高分贝会让学生听觉脱敏，吼叫退化为背景白噪音；若警告从不兑现后果，很快沦为“只吼不罚”。" data-en="Repeated yelling becomes background noise; unfulfilled threats erode all authority.">持续高分贝会让学生听觉脱敏，吼叫退化为背景白噪音；若警告从不兑现后果，很快沦为“只吼不罚”。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="③ 课堂管理的三大目标" data-en="③ 3 Core Goals">③ 课堂管理的三大目标</h4>
+              <p data-zh="① 争取更多有效学习时间；② 争取更多学生投入学习（清晰说明做什么、怎么做、做到什么程度）；③ 帮助学生学会自我管理。" data-en="(1) Maximize learning time; (2) Maximize student engagement with clear expectations; (3) Foster self-regulation.">① 争取更多有效学习时间；② 争取更多学生投入学习（清晰说明做什么、怎么做、做到什么程度）；③ 帮助学生学会自我管理。</p>
+            </div>
+          </div>
+          <div class="callout info">
+            <strong data-zh="理论基石：" data-en="Theoretical Foundations:">理论基石：</strong>
+            <span data-zh="斯金纳（行为主义正向强化）、库尼（有效课堂管理：一心多用与流畅转换）、德雷克斯（民主取向：不当行为是追求归属感的信号）、斯帕罗（积极行为支持三级预防）。" data-en="Skinner (positive reinforcement), Kounin (withitness & smooth transitions), Dreikurs (misbehavior as a bid for belonging), and PBIS 3-tier support.">斯金纳（行为主义正向强化）、库尼（有效课堂管理：一心多用与流畅转换）、德雷克斯（民主取向：不当行为是追求归属感的信号）、斯帕罗（积极行为支持三级预防）。</span>
+          </div>
+        </section>
+
+        <!-- M2 Section 2 -->
+        <section class="section-block" id="m2-prevent">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 02 · PREVENTION" data-en="PART 02 · PREVENTION">PART 02 · PREVENTION</div>
+              <h2 class="section-title" data-zh="防患未然：用环境、程序与节奏消灭 90% 问题" data-en="Prevent 90% of Issues via Space, Routines & Pacing">防患未然：用环境、程序与节奏消灭 90% 问题</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m2" data-sec="m2-prevent" type="button">标记已读</button>
+          </div>
+          <div class="callout sage">
+            <strong data-zh="四层防线铁律：" data-en="4-Layer Prevention Rule:">四层防线铁律：</strong>
+            <span data-zh="能用<strong>L1 环境</strong>解决，就不靠提醒；能用<strong>L2 程序</strong>解决，就不临时喊话；能用<strong>L3 非语言</strong>解决，就不升级到<strong>L4 语言</strong>。" data-en="Solve with <strong>L1 Environment</strong> before reminders; <strong>L2 Routines</strong> before ad-hoc calls; <strong>L3 Non-verbal</strong> before <strong>L4 Verbal</strong>.">能用<strong>L1 环境</strong>解决，就不靠提醒；能用<strong>L2 程序</strong>解决，就不临时喊话；能用<strong>L3 非语言</strong>解决，就不升级到<strong>L4 语言</strong>。</span>
+          </div>
+          <div class="grid-3">
+            <div class="info-card">
+              <h4 data-zh="宏观：三区划分 + 90秒巡检" data-en="Macro: 3 Zones & 90s Patrol">宏观：三区划分 + 90秒巡检</h4>
+              <p data-zh="讲台旁（高能互动区）、靠窗通道（边缘盲区）、最后排（高危走神区）。每节课至少 2 次 90 秒巡检：讲台→后排两侧→窗门边→回讲台。" data-en="Avoid standing only at the podium. Walk a 90s loop (front → back corners → windows → podium) twice per lesson.">讲台旁（高能互动区）、靠窗通道（边缘盲区）、最后排（高危走神区）。每节课至少 2 次 90 秒巡检：讲台→后排两侧→窗门边→回讲台。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="cognitive_load" data-zh="中观墙面" data-en="Walls">中观墙面</span> & <span class="term-pill" data-term="broken_windows" data-zh="微观桌面" data-en="Desks">微观桌面</span></h4>
+              <p data-zh="墙面减刺激防认知过载；桌面用三口令切换——<strong>“桌面极简”</strong>（仅课本笔记笔）、<strong>“进入作业态”</strong>、<strong>“桌面清零”</strong>（椅子推入桌下）。" data-en="Reduce wall clutter to prevent cognitive overload. Use 3 desk commands: Minimal Mode, Worksheet Mode, Zero-Clear Mode.">墙面减刺激防认知过载；桌面用三口令切换——<strong>“桌面极简”</strong>（仅课本笔记笔）、<strong>“进入作业态”</strong>、<strong>“桌面清零”</strong>（椅子推入桌下）。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="operational_def" data-zh="“安静”四动作 & 手势反馈" data-en="Operational 'Quiet' & Gestures">“安静”四动作 & 手势反馈</span></h4>
+              <p data-zh="不说“安静一点”，改给具体动作：① 翻到第X页 ② 拿笔 ③ 坐端正 ④ 看老师。发言时全班视线转向发言者并用手势表态（👍同意 / ⭕补充 / ✊疑问）。" data-en="Replace 'be quiet' with 4 physical actions. Use silent hand signals (thumbs up = agree, circle = add, fist = question).">不说“安静一点”，改给具体动作：① 翻到第X页 ② 拿笔 ③ 坐端正 ④ 看老师。发言时全班视线转向发言者并用手势表态（👍同意 / ⭕补充 / ✊疑问）。</p>
+            </div>
+          </div>
+
+          <h3 class="sub-heading" data-zh="⏱️ 课堂节奏“三二一”切割法 & 三段式梯度卡" data-en="⏱️ 3-2-1 Pacing & Tiered Task Cards">⏱️ 课堂节奏“三二一”切割法 & 三段式梯度卡</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="cognitive_gap" data-zh="每 10 分钟换一次挡" data-en="Switch Gears Every 10 Mins">每 10 分钟换一次挡</span></h4>
+              <p data-zh="单向听讲注意力在 5–10 分钟达峰后断崖下跌。将 30 分钟核心区切为 <strong>讲（新知）→ 练（合作）→ 评（互评）</strong>；课前 2 分钟收心；用明确指令填满十几秒的“认知空窗期”。" data-en="Attention drops after 5–10 mins of lecturing. Split 30 mins into Teach → Practice → Review, and fill 10s transition gaps with clear cues.">单向听讲注意力在 5–10 分钟达峰后断崖下跌。将 30 分钟核心区切为 <strong>讲（新知）→ 练（合作）→ 评（互评）</strong>；课前 2 分钟收心；用明确指令填满十几秒的“认知空窗期”。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="zpd" data-zh="三段式梯度卡（最近发展区）" data-en="3-Star Tiered Task Cards (ZPD)">三段式梯度卡（最近发展区）</span></h4>
+              <p data-zh="⭐<strong>一星保底</strong>（全员必做，60分入口）→ ⭐⭐<strong>二星进阶</strong>（多数学生，80分）→ ⭐⭐⭐<strong>三星挑战</strong>（学有余力，100分贴佳作栏）。自选起点，不许从三星倒着做！" data-en="1-Star (Core floor for all) → 2-Star (Standard) → 3-Star (Extension). Prevents fast finishers from chatting and struggling learners from quitting.">⭐<strong>一星保底</strong>（全员必做，60分入口）→ ⭐⭐<strong>二星进阶</strong>（多数学生，80分）→ ⭐⭐⭐<strong>三星挑战</strong>（学有余力，100分贴佳作栏）。自选起点，不许从三星倒着做！</p>
+            </div>
+          </div>
+          <div class="grid-3" style="margin-top:14px;">
+            <div class="info-card">
+              <h4 data-zh="学得快（防插话/带节奏）" data-en="Fast Learners">学得快（防插话/带节奏）</h4>
+              <p data-zh="课前单独沟通布置高阶挑战任务；课上赋予“小老师”角色，给他正当的表达与展示出口。" data-en="Assign extension challenges beforehand and give 'peer tutor' roles in class.">课前单独沟通布置高阶挑战任务；课上赋予“小老师”角色，给他正当的表达与展示出口。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="学得慢（防畏难走神）" data-en="Struggling Learners">学得慢（防畏难走神）</h4>
+              <p data-zh="把大任务拆成能<strong>马上开始</strong>的极小步骤（如先写题号、读前两句）；先让他动起来，再谈完成质量。" data-en="Break big tasks into tiny immediate first steps; get them moving before demanding perfection.">把大任务拆成能<strong>马上开始</strong>的极小步骤（如先写题号、读前两句）；先让他动起来，再谈完成质量。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="不想学（防违纪逃避）" data-en="Disengaged Learners">不想学（防违纪逃避）</h4>
+              <p data-zh="先查根因：不会做、怕出错、没动力，还是用违纪掩饰逃避？达标即给具体反馈，长期问题联动班主任与家长。" data-en="Diagnose root cause first (skill gap, fear of failure, or avoidance); reinforce small wins.">先查根因：不会做、怕出错、没动力，还是用违纪掩饰逃避？达标即给具体反馈，长期问题联动班主任与家长。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- M2 Section 3 -->
+        <section class="section-block" id="m2-intervene">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 03 · ZERO-YELL INTERVENTION" data-en="PART 03 · ZERO-YELL INTERVENTION">PART 03 · ZERO-YELL INTERVENTION</div>
+              <h2 class="section-title" data-zh="问题发生：零吼叫干预与纠偏话术" data-en="When Issues Happen: Zero-Yell Intervention & Scripts">问题发生：零吼叫干预与纠偏话术</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m2" data-sec="m2-intervene" type="button">标记已读</button>
+          </div>
+          <p data-zh="总原则：<strong>先处理情绪，再处理行为，最后解决问题</strong>；守住“三不”底线——<strong>不情绪化对峙（深呼吸3秒）、不公开羞辱、不扩大矛盾</strong>。" data-en="Rule: Emotion first, behavior second, problem-solving third. Never escalate emotionally, humiliate publicly, or halt the whole class for one student.">总原则：<strong>先处理情绪，再处理行为，最后解决问题</strong>；守住“三不”底线——<strong>不情绪化对峙（深呼吸3秒）、不公开羞辱、不扩大矛盾</strong>。</p>
+          <div class="grid-2" style="margin-bottom:16px;">
+            <div class="info-card">
+              <h4 data-zh="👀 非语言干预：三级眼神 + 近距站位" data-en="👀 Non-Verbal: 3-Level Gaze & Proximity">👀 非语言干预：三级眼神 + 近距站位</h4>
+              <p data-zh="一级定格1秒 → 二级凝视3秒+微摇头 → 三级停顿转向他；或边讲边走到他桌边站 3–5 秒、手轻搭椅背或轻点桌面两下——能用身体解决，绝不用嘴。" data-en="Level 1 (1s glance) → Level 2 (3s gaze + head shake) → Level 3 (pause & turn); or walk calmly beside their desk for 3–5s.">一级定格1秒 → 二级凝视3秒+微摇头 → 三级停顿转向他；或边讲边走到他桌边站 3–5 秒、手轻搭椅背或轻点桌面两下——能用身体解决，绝不用嘴。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="💬 纠偏三步公式：事实 → 动作 → 边界" data-en="💬 3-Step Script: Fact → Action → Boundary">💬 纠偏三步公式：事实 → 动作 → 边界</h4>
+              <p data-zh="① 看见事实：“我看到你在和同桌说话” → ② 给出动作：“请面向前方，笔放一旁” → ③ 时间边界：“给你 5 秒完成，之后继续听讲”。" data-en="(1) State fact: 'I see you talking' → (2) Give action: 'Face front, pen down' → (3) Time boundary: '5 seconds to reset.'">① 看见事实：“我看到你在和同桌说话” → ② 给出动作：“请面向前方，笔放一旁” → ③ 时间边界：“给你 5 秒完成，之后继续听讲”。</p>
+            </div>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th class="col-no" data-zh="常见高频场景 / 情绪话误区" data-en="Common Scenario / Emotional Mistake">常见高频场景 / 情绪话误区</th>
+                <th class="col-yes" data-zh="✅ 现成可执行话术 & 心理学内核" data-en="✅ Actionable Script & Rationale">✅ 现成可执行话术 & 心理学内核</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-zh="插嘴 / 接下茬（误区：“你怎么又插嘴！”）" data-en="Blurting out ('Why do you always interrupt?!')">插嘴 / 接下茬（误区：“你怎么又插嘴！”）</td>
+                <td data-zh="“我听到了你的答案，但我还没看到你举手的姿势——期待你举手后再讲。”（先满足被看见，再立规则）" data-en="'I hear your idea, and I'm waiting to see your raised hand before calling on you.' (Acknowledge + enforce rule)">“我听到了你的答案，但我还没看到你举手的姿势——期待你举手后再讲。”（先满足被看见，再立规则）</td>
+              </tr>
+              <tr>
+                <td data-zh="同桌玩橡皮（误区：“再玩别上课了！”）" data-en="Playing with eraser ('Get out if you keep playing!')">同桌玩橡皮（误区：“再玩别上课了！”）</td>
+                <td data-zh="“两个选择：现在收文具专心做题；或继续玩，课间来办公室我陪你补完。”（有限选择，转移责任）" data-en="'Two choices: put it away and finish now, or stay during break to complete it with me.' (Limited choice)">“两个选择：现在收文具专心做题；或继续玩，课间来办公室我陪你补完。”（有限选择，转移责任）</td>
+              </tr>
+              <tr>
+                <td data-zh="公开顶嘴挑衅" data-en="Public defiance">公开顶嘴挑衅</td>
+                <td data-zh="“大声咆哮不是表达意见的方式，下课后办公室聊，现在先捡起书。”（撤观众、延迟处理）" data-en="'Yelling isn't how we discuss issues. We'll talk after class; pick up your book now.' (Remove audience)">“大声咆哮不是表达意见的方式，下课后办公室聊，现在先捡起书。”（撤观众、延迟处理）</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- M2 Section 4 -->
+        <section class="section-block" id="m2-culture">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 04 · LONG-TERM CULTURE" data-en="PART 04 · LONG-TERM CULTURE">PART 04 · LONG-TERM CULTURE</div>
+              <h2 class="section-title" data-zh="长效赋能：规则契约、奖励解药与家校同盟" data-en="Culture: Class Contracts, Smart Rewards & Parent Alliance">长效赋能：规则契约、奖励解药与家校同盟</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m2" data-sec="m2-culture" type="button">标记已读</button>
+          </div>
+          <div class="grid-3">
+            <div class="info-card">
+              <h4 data-zh="📜 规则少而清：压到三类底线" data-en="📜 3 Core Rule Categories">📜 规则少而清：压到三类底线</h4>
+              <p data-zh="不要贴满 22 条禁令！压到<strong>安全、尊重、学习</strong>三类可观察行为，由教师定底线、学生讨论具体做法并表决生效。关键是<strong>一致</strong>而非严厉。" data-en="Replace 22 bans with 3 observable pillars: Safety, Respect, Learning. Consistency beats harshness.">不要贴满 22 条禁令！压到<strong>安全、尊重、学习</strong>三类可观察行为，由教师定底线、学生讨论具体做法并表决生效。关键是<strong>一致</strong>而非严厉。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="overjustification" data-zh="🎁 奖励失效 vs 三剂解药" data-en="🎁 Why Rewards Fail & 3 Fixes">🎁 奖励失效 vs 三剂解药</span></h4>
+              <p data-zh="警惕小红花通胀、过度理由效应与过度扣分。解药：① <strong>非物质特权优先</strong>（当小老师、选座位、免值日）；② <strong>描述性鼓励</strong>；③ <strong>夸努力策略不夸聪明</strong>。" data-en="Avoid sticker inflation & overjustification. Use non-material privileges, descriptive praise, and effort-based feedback.">警惕小红花通胀、过度理由效应与过度扣分。解药：① <strong>非物质特权优先</strong>（当小老师、选座位、免值日）；② <strong>描述性鼓励</strong>；③ <strong>夸努力策略不夸聪明</strong>。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="🤝 家校同盟：把家长变合伙人" data-en="🤝 Parents as Partners">🤝 家校同盟：把家长变合伙人</h4>
+              <p data-zh="批评孩子易触发家长防御机制。把“你家孩子一直不听话”换成“我想和您一起讨论一个情况”，先说优势，再约定一周后复盘。" data-en="Avoid blaming parents. Frame as 'Let's problem-solve together,' highlight a strength first, and set a 1-week follow-up.">批评孩子易触发家长防御机制。把“你家孩子一直不听话”换成“我想和您一起讨论一个情况”，先说优势，再约定一周后复盘。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- M2 Section 5 -->
+        <section class="section-block" id="m2-tools">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 05 · DAILY TOOLKIT" data-en="PART 05 · DAILY TOOLKIT">PART 05 · DAILY TOOLKIT</div>
+              <h2 class="section-title" data-zh="工具落地：教师每日 2 分钟自检清单" data-en="Daily 2-Minute Teacher Self-Check">工具落地：教师每日 2 分钟自检清单</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m2" data-sec="m2-tools" type="button">标记已读</button>
+          </div>
+          <div class="checklist" id="m2Checklist"></div>
+          <div class="callout sage" style="margin-top:16px;">
+            <strong data-zh="每节课后三问 & 教师自我关怀：" data-en="3 Post-Class Questions & Teacher Self-Care:">每节课后三问 & 教师自我关怀：</strong>
+            <span data-zh="① 哪一刻最好？② 哪个节点出问题？③ 下次改哪一件小事？（每周进步 1 项即可，一节上砸的课不构成对你职业生涯的判决；多向同事听课与教研员借力）。<br><strong>带走四句话：</strong>最好的纪律，是让学生不需要纪律｜教师的音量，是课堂失控程度的指标｜先处理情绪，再处理事情｜描述行为，不要评判人。" data-en="(1) Best moment? (2) Where did friction occur? (3) One small tweak for next time? Remember: one rough lesson never defines your career. Describe behavior, never judge the person.">① 哪一刻最好？② 哪个节点出问题？③ 下次改哪一件小事？（每周进步 1 项即可，一节上砸的课不构成对你职业生涯的判决；多向同事听课与教研员借力）。<br><strong>带走四句话：</strong>最好的纪律，是让学生不需要纪律｜教师的音量，是课堂失控程度的指标｜先处理情绪，再处理事情｜描述行为，不要评判人。</span>
+          </div>
+        </section>
+      </div><!-- End #view-m2 -->
+
+      <!-- ==================== MODULE 3: GENAI & TBLT ==================== -->
+      <div class="module-view" id="view-m3">
+        <section class="hero">
+          <div class="hero-top-row">
+            <div class="hero-eyebrow" data-zh="课程 03 / 04 · 2026年11月13日" data-en="Module 03 / 04 · 13 Nov 2026">课程 03 / 04 · 2026年11月13日</div>
+            <a class="pdf-btn" href="pdfs/03-genai-tblt.pdf" target="_blank" rel="noopener noreferrer" data-zh="📄 打开讲师原版 PDF" data-en="📄 Open Slides PDF">📄 打开讲师原版 PDF</a>
+          </div>
+          <h1 data-zh="GenAI 赋能基于任务的华文课堂教学设计" data-en="GenAI-Powered Task-Based Chinese Teaching">GenAI 赋能基于任务的华文课堂教学设计</h1>
+          <p class="hero-sub" data-zh="主讲：崔正青（中国 · 山西大学）｜如何运用 AI 提升教学成效，而不只是减轻备课工作（56 页深度解析）" data-en="Speaker: Cui Zhengqing (Shanxi University) | Using AI to elevate pedagogy, not just cut prep time">主讲：崔正青（中国 · 山西大学）｜如何运用 AI 提升教学成效，而不只是减轻备课工作（56 页深度解析）</p>
+          <div class="hero-goals">
+            <div class="hero-goal">
+              <strong data-zh="SAMR 升级" data-en="SAMR Ladder">SAMR 升级</strong>
+              <span data-zh="从替代/增强迈向任务重构与重塑" data-en="Move from Substitution to Redefinition">从替代/增强迈向任务重构与重塑</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="TBLT 任务设计" data-en="TBLT Design">TBLT 任务设计</strong>
+              <span data-zh="真实交际需求 + 信息差 + 非语言成果" data-en="Real communication + info gap + outcome">真实交际需求 + 信息差 + 非语言成果</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="AI 分层教材" data-en="Differentiation">AI 分层教材</strong>
+              <span data-zh="Few-shot 调难度、精加工阅读与支架卡" data-en="Few-shot leveling & elaborated reading">Few-shot 调难度、精加工阅读与支架卡</span>
+            </div>
+            <div class="hero-goal">
+              <strong data-zh="防代写与 AI 素养" data-en="AI Literacy">防代写与 AI 素养</strong>
+              <span data-zh="只审题不代写，20 问苏格拉底引导" data-en="Guided ideation without ghostwriting">只审题不代写，20 问苏格拉底引导</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- M3 Section 1 -->
+        <section class="section-block" id="m3-samr">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 01 · SAMR & TBLT" data-en="PART 01 · SAMR & TBLT">PART 01 · SAMR & TBLT</div>
+              <h2 class="section-title" data-zh="SAMR 技术融合模型与 TBLT 任务设计" data-en="SAMR Integration & Task-Based Language Teaching">SAMR 技术融合模型与 TBLT 任务设计</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m3" data-sec="m3-samr" type="button">标记已读</button>
+          </div>
+          <p data-zh="运用 <span class='term-pill' data-term='samr'>SAMR 模型</span> 检视 AI 是否真正改变了学习任务，并结合 <span class='term-pill' data-term='tblt'>TBLT（任务型语言教学）</span> 打造有真实交际需求的华文课堂。" data-en="Use the <span class='term-pill' data-term='samr'>SAMR Model</span> with <span class='term-pill' data-term='tblt'>TBLT</span> to design authentic communicative Chinese tasks.">
+            运用 <span class="term-pill" data-term="samr">SAMR 模型</span> 检视 AI 是否真正改变了学习任务，并结合 <span class="term-pill" data-term="tblt">TBLT（任务型语言教学）</span> 打造有真实交际需求的华文课堂。
+          </p>
+          <div class="grid-4">
+            <div class="info-card">
+              <h4 data-zh="S · 替代 Substitution" data-en="S · Substitution">S · 替代 Substitution</h4>
+              <p data-zh="电子文档代替纸质作业，PPT 代替黑板——任务本身没变。" data-en="Digital docs replace paper; PPT replaces blackboard—task unchanged.">电子文档代替纸质作业，PPT 代替黑板——任务本身没变。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="A · 增强 Augmentation" data-en="A · Augmentation">A · 增强 Augmentation</h4>
+              <p data-zh="文档批注、语音朗读、自动拼写检查、在线问卷自动统计。" data-en="Comments, read-aloud, spellcheck, auto-graded polls.">文档批注、语音朗读、自动拼写检查、在线问卷自动统计。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="M · 修改 Modification" data-en="M · Modification">M · 修改 Modification</h4>
+              <p data-zh="学生合作录制视频、制作交互式数字故事、在线协作完成项目。" data-en="Collaborative video/digital storytelling & live online co-creation.">学生合作录制视频、制作交互式数字故事、在线协作完成项目。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="R · 重塑 Redefinition" data-en="R · Redefinition">R · 重塑 Redefinition</h4>
+              <p data-zh="跨国学生实时联合项目、VR 研学、AI 驱动的个性化交互任务（如与《给阿嬷的情书》谢南枝跨时空访谈）。" data-en="Cross-border live projects, VR field trips, AI role-play interviews.">跨国学生实时联合项目、VR 研学、AI 驱动的个性化交互任务（如与《给阿嬷的情书》谢南枝跨时空访谈）。</p>
+            </div>
+          </div>
+
+          <div class="callout info">
+            <strong data-zh="好“任务”的三大黄金标准 + 五类活动（Pica et al., 1993）：" data-en="3 Criteria of a Good Task + 5 Task Types:">好“任务”的三大黄金标准 + 五类活动（Pica et al., 1993）：</strong>
+            <span data-zh="① 有真实的交际需求；② 语言在最近发展区内；③ 有<strong>非语言结果</strong>（如敲定旅行目的地、规划社区路线）。五类活动：<span class='term-pill' data-term='info_gap'>信息差、拼图协作</span>、决策、问题解决、观点分歧。" data-en="(1) Real communicative need; (2) Within ZPD; (3) Non-linguistic outcome (e.g., choosing a trip). 5 Types: <span class='term-pill' data-term='info_gap'>Info-gap, Jigsaw</span>, Decision-making, Problem-solving, Opinion-exchange.">① 有真实的交际需求；② 语言在最近发展区内；③ 有<strong>非语言结果</strong>（如敲定旅行目的地、规划社区路线）。五类活动：<span class="term-pill" data-term="info_gap">信息差、拼图协作</span>、决策、问题解决、观点分歧。</span>
+          </div>
+        </section>
+
+        <!-- M3 Section 2 -->
+        <section class="section-block" id="m3-diff">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 02 · DIFFERENTIATED TEXTS" data-en="PART 02 · DIFFERENTIATED TEXTS">PART 02 · DIFFERENTIATED TEXTS</div>
+              <h2 class="section-title" data-zh="用 AI 设计分层教材与任务支架" data-en="AI-Assisted Text Leveling & Task Scaffolding">用 AI 设计分层教材与任务支架</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m3" data-sec="m3-diff" type="button">标记已读</button>
+          </div>
+          <div class="grid-3">
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="few_shot" data-zh="① Few-Shot 课文分层" data-en="① Few-Shot Leveling">① Few-Shot 课文分层</span></h4>
+              <p data-zh="给 AI 一篇现有课文并标注其水平（如“初级高阶”），要求改写为“初级中阶”与“中级低阶”，精准照顾同班不同华文程度的学生。" data-en="Give AI an anchor text and ask for Novice-Mid and Intermediate-Low versions to serve mixed-level classes.">给 AI 一篇现有课文并标注其水平（如“初级高阶”），要求改写为“初级中阶”与“中级低阶”，精准照顾同班不同华文程度的学生。</p>
+            </div>
+            <div class="info-card">
+              <h4><span class="term-pill" data-term="elaborated_reading" data-zh="② 精加工阅读（加括号注释）" data-en="② Elaborated Reading">② 精加工阅读（加括号注释）</span></h4>
+              <p data-zh="不粗暴删掉好词，而是在难词后用括号加通俗解释（如“效率更高（工作更快、更方便）”），亦可搭配 Diffit 等工具快速生成。" data-en="Keep authentic vocabulary while adding inline parenthetical glosses for comprehension.">不粗暴删掉好词，而是在难词后用括号加通俗解释（如“效率更高（工作更快、更方便）”），亦可搭配 Diffit 等工具快速生成。</p>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="③ 同任务三层支架与输出" data-en="③ Tiered Scaffolds & Outputs">③ 同任务三层支架与输出</h4>
+              <p data-zh="弱生给句式模板+关键词（口头汇报/填表）；中等给问题引导清单（写简短段落）；优生给思辨拓展题（写议论文/宣讲脚本）。" data-en="Struggling: sentence frames; Mid: guiding questions; Advanced: critical debate & persuasive scripts.">弱生给句式模板+关键词（口头汇报/填表）；中等给问题引导清单（写简短段落）；优生给思辨拓展题（写议论文/宣讲脚本）。</p>
+            </div>
+          </div>
+
+          <div class="callout sage" style="margin-top:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:6px;">
+              <strong>🛠️ <span class="term-pill" data-term="diffit" data-zh="课程推荐工具：Diffit (AI 文本分层神器)" data-en="Featured App: Diffit for Teachers">课程推荐工具：Diffit (AI 文本分层神器)</span></strong>
+              <a href="https://web.diffit.me" target="_blank" rel="noopener noreferrer" class="copy-btn" style="text-decoration:none;color:var(--accent);" data-zh="↗ 打开 web.diffit.me" data-en="↗ Open web.diffit.me">↗ 打开 web.diffit.me</a>
+            </div>
+            <span data-zh="讲师在简报第 37–38 页重点介绍的备课应用：教师只需输入主题、文章或网页链接，<strong>Diffit</strong> 即可按指定阅读水平一键生成“简化/扩充/支架版”文本，并自动配套摘要、核心词汇表、选择题与开放式思考题。<br><strong>⚠️ GenAI 生成文本五大审核原则：</strong>① 语言与文化准确性 ② 内容质量 ③ 语言水平匹配度 ④ 呈现形式符合要求 ⑤ 前后一致性。" data-en="Featured on Slides 37–38: Paste any topic, text, or URL into <strong>Diffit</strong> to adapt reading levels instantly and generate summaries, vocabulary lists, and comprehension checks.<br><strong>⚠️ 5 Quality Checks for GenAI Texts:</strong> Linguistic/cultural accuracy, quality, proficiency match, formatting, and consistency.">讲师在简报第 37–38 页重点介绍的备课应用：教师只需输入主题、文章或网页链接，<strong>Diffit</strong> 即可按指定阅读水平一键生成“简化/扩充/支架版”文本，并自动配套摘要、核心词汇表、选择题与开放式思考题。<br><strong>⚠️ GenAI 生成文本五大审核原则：</strong>① 语言与文化准确性 ② 内容质量 ③ 语言水平匹配度 ④ 呈现形式符合要求 ⑤ 前后一致性。</span>
+          </div>
+        </section>
+
+        <!-- M3 Section 3 -->
+        <section class="section-block" id="m3-literacy">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 03 · AI LITERACY" data-en="PART 03 · AI LITERACY">PART 03 · AI LITERACY</div>
+              <h2 class="section-title" data-zh="避免过度依赖 AI 代写：培养学生 AI 素养" data-en="Preventing Ghostwriting & Building Student AI Literacy">避免过度依赖 AI 代写：培养学生 AI 素养</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m3" data-sec="m3-literacy" type="button">标记已读</button>
+          </div>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4 data-zh="✍️ 独中 UEC 作文“四步防代写”流程" data-en="✍️ 4-Step Anti-Ghostwriting Essay Flow">✍️ 独中 UEC 作文“四步防代写”流程</h4>
+              <ul>
+                <li data-zh="<strong>1. 审题：</strong>学生先自己想，再让 AI 分析写作对象、文体与跑题误区（严禁写正文）。" data-en="<strong>1. Analyze:</strong> Brainstorm first, then ask AI for prompt pitfalls (no drafting)."><strong>1. 审题：</strong>学生先自己想，再让 AI 分析写作对象、文体与跑题误区（严禁写正文）。</li>
+                <li data-zh="<strong>2. 立意：</strong>AI 给 3 个不空洞的立意，由学生挑选、修改或合并。" data-en="<strong>2. Thesis:</strong> AI suggests 3 angles; student chooses and adapts."><strong>2. 立意：</strong>AI 给 3 个不空洞的立意，由学生挑选、修改或合并。</li>
+                <li data-zh="<strong>3. 提纲：</strong>搭建独中四段式提纲（点题—事例细节—感悟—升华）。" data-en="<strong>3. Outline:</strong> Build a 4-part structured outline only."><strong>3. 提纲：</strong>搭建独中四段式提纲（点题—事例细节—感悟—升华）。</li>
+                <li data-zh="<strong>4. 手写+微调：</strong>学生手写全文后，再让 AI 做局部润色反馈。" data-en="<strong>4. Handwrite + Polish:</strong> Student writes full draft by hand, then seeks targeted feedback."><strong>4. 手写+微调：</strong>学生手写全文后，再让 AI 做局部润色反馈。</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="🎭 课堂实践案例：林连玉 & 给阿嬷的情书" data-en="🎭 Classroom Cases: Lin Lianyu & Love Letter to Grandma">🎭 课堂实践案例：林连玉 & 给阿嬷的情书</h4>
+              <p data-zh="《最绚丽的浪花——林连玉》结合陈嘉庚类比与《给阿嬷的情书》时间线，让学生对 AI 扮演的“谢南枝”进行<strong>跨时空访谈</strong>，并限定 AI 仅依据电影信息作答，训练学生提出有深度的解读性问题。" data-en="Students conduct a 'cross-time interview' with AI role-playing Xie Nanzhi (restricted strictly to film facts), training deep questioning skills.">《最绚丽的浪花——林连玉》结合陈嘉庚类比与《给阿嬷的情书》时间线，让学生对 AI 扮演的“谢南枝”进行<strong>跨时空访谈</strong>，并限定 AI 仅依据电影信息作答，训练学生提出有深度的解读性问题。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- M3 Section 4: Copy-Ready Prompt Library -->
+        <section class="section-block" id="m3-prompts">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 04 · PROMPT LIBRARY" data-en="PART 04 · PROMPT LIBRARY">PART 04 · PROMPT LIBRARY</div>
+              <h2 class="section-title" data-zh="华文教学 Prompt 一键复制实战库" data-en="Copy-Ready Chinese Teaching Prompt Library">华文教学 Prompt 一键复制实战库</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m3" data-sec="m3-prompts" type="button">标记已读</button>
+          </div>
+
+          <div class="prompt-card">
+            <div class="prompt-head">
+              <span data-zh="1. 拼图协作 + 信息差任务生成 Prompt" data-en="1. Jigsaw & Information-Gap Task Generator">1. 拼图协作 + 信息差任务生成 Prompt</span>
+              <button class="prompt-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="prompt-body">请参照以下任务形式，创作5项同类任务：“将学生分为三四人小组，为每组发放不同场所的简易任务说明。学生阅读对应清单后，重新组建三四人新小组，每位组员分别掌握一处不同景点的相关信息；组员依次分享后，小组共同商议确定最终出行地点”。任务需包含信息差设定，最终产出非语言类成果，适配高阶入门级学习者，并融合决策制定、观点分歧与问题解决活动。</div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="prompt-head">
+              <span data-zh="2. 素材汇编与难度控制 Prompt（如 HSK 4 级）" data-en="2. Reading Material Adaptation Prompt">2. 素材汇编与难度控制 Prompt（如 HSK 4 级）</span>
+              <button class="prompt-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="prompt-body">请把这些素材整理成一篇阅读材料，主题为《[主题]》，学习者的中文水平为 [HSK4级/独中初中]，课文长度为 [500] 字，根据语义分为 [4] 个段落。要求：减少使用非必要的术语，将较难的词语换简单一些，不要使用过复杂的句式。</div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="prompt-head">
+              <span data-zh="3. 独中 UEC 作文“只审题不代写” Prompt" data-en="3. Anti-Ghostwriting Essay Coaching Prompt">3. 独中 UEC 作文“只审题不代写” Prompt</span>
+              <button class="prompt-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="prompt-body">这是 UEC 作文题目《[题目]》。请帮我分析：这篇作文的写作对象、文体、写作重点、可能写偏的误区。只做审题分析，不要写作文。随后请给我 3 个积极正向、不空洞的立意供我选择。</div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="prompt-head">
+              <span data-zh="4. 苏格拉底式 20 问写作引导 Prompt" data-en="4. Socratic 20-Question Writing Coach Prompt">4. 苏格拉底式 20 问写作引导 Prompt</span>
+              <button class="prompt-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="prompt-body">现在你的面前是一位汉语水平为 [新HSK2/初级] 的学生，他需要完成作文《[题目]》但不知道怎么写。请你用符合他汉语水平的简单词汇，依次向他提出 20 个问题，引导他把作文所需要的要素讲出来；问完后给他一个总体性建议，不要直接代写全文。</div>
+          </div>
+        </section>
+      </div><!-- End #view-m3 -->
+
+      <!-- ==================== MODULE 4: CLAYTAN ==================== -->
+      <div class="module-view" id="view-m4">
+        <section class="hero">
+          <div class="hero-top-row">
+            <div class="hero-eyebrow" data-zh="课程 04 / 04 · 2026年11月13日" data-en="Module 04 / 04 · 13 Nov 2026">课程 04 / 04 · 2026年11月13日</div>
+            <a class="pdf-btn" href="pdfs/04-claytan-education.pdf" target="_blank" rel="noopener noreferrer" data-zh="📄 打开讲师原版 PDF" data-en="📄 Open Slides PDF">📄 打开讲师原版 PDF</a>
+          </div>
+          <h1 data-zh="Claytan：重新看见教育的价值 · 不完美的美" data-en="Claytan: Rediscovering the Value of Education">Claytan：重新看见教育的价值 · 不完美的美</h1>
+          <p class="hero-sub" data-zh="主讲：戴詩韻讲师 Sherin Teh（20年教育背景 · 儿童心理学与青少年辅导 · JPK NCS TTT 认证培训师）｜13/11/2026 · 11:50am–12:30pm" data-en="Speaker: Sherin Teh (20 yrs education, Child Psychology & Youth Counseling, JPK NCS TTT) | 13/11/2026">主讲：戴詩韻讲师 Sherin Teh（20年教育背景 · 儿童心理学与青少年辅导 · JPK NCS TTT 认证培训师）｜13/11/2026 · 11:50am–12:30pm</p>
+          <div class="hero-quote" data-zh="“教育，不只是给出成绩。教育的本质，是先看见潜能，再陪伴成长——因为教育的美，从来不是制造完美，而是懂得欣赏不完美。”" data-en="'Education is more than grades. Its essence is seeing potential first and walking alongside growth—appreciating the beauty of imperfection.'">“教育，不只是给出成绩。教育的本质，是先看见潜能，再陪伴成长——因为教育的美，从来不是制造完美，而是懂得欣赏不完美。”</div>
+        </section>
+
+        <!-- M4 Section 1: Pottery 5 Stages -->
+        <section class="section-block" id="m4-clay">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 01 · THE POTTER'S JOURNEY" data-en="PART 01 · THE POTTER'S JOURNEY">PART 01 · THE POTTER'S JOURNEY</div>
+              <h2 class="section-title" data-zh="陶艺五部曲：从一块泥土到独一无二的作品" data-en="Five Stages: From Raw Clay to Unique Vessel">陶艺五部曲：从一块泥土到独一无二的作品</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m4" data-sec="m4-clay" type="button">标记已读</button>
+          </div>
+
+          <div class="timeline">
+            <div class="tl-step">
+              <h4 data-zh="01 一块泥土的可能性 · 先看见孩子，再评价孩子" data-en="01 Raw Clay Potential · See the Child Before Grading">01 一块泥土的可能性 · 先看见孩子，再评价孩子</h4>
+              <p data-zh="每块泥土都有成为作品的可能；每个孩子都有自己的天赋与潜能，不要过早用成绩定义孩子。" data-en="Every lump of clay holds infinite possibilities. Do not define a child prematurely by test scores.">每块泥土都有成为作品的可能；每个孩子都有自己的天赋与潜能，不要过早用成绩定义孩子。</p>
+            </div>
+            <div class="tl-step">
+              <h4 data-zh="02 塑造与引导 · 有分寸的力量，才是引导" data-en="02 Shaping & Guiding · Measured Gentle Force">02 塑造与引导 · 有分寸的力量，才是引导</h4>
+              <p data-zh="教育者如陶艺师：既塑造又引导，而不是把孩子压进同一个模具。过度施力会让作品变形；实践因材施教。" data-en="Teachers are potters, not cookie-cutter molds. Excessive force deforms the clay; honor individual differences.">教育者如陶艺师：既塑造又引导，而不是把孩子压进同一个模具。过度施力会让作品变形；实践因材施教。</p>
+            </div>
+            <div class="tl-step">
+              <h4 data-zh="03 修坯与修整 · 纠正行为，也保护自尊" data-en="03 Trimming · Correct Behavior, Protect Dignity">03 修坯与修整 · 纠正行为，也保护自尊</h4>
+              <p data-zh="修整不是否定，而是帮助作品更完整。错误是学习与成长的机会，纪律与关怀可以并存。" data-en="Trimming refines rather than rejects. Mistakes are calibration moments where discipline and care coexist.">修整不是否定，而是帮助作品更完整。错误是学习与成长的机会，纪律与关怀可以并存。</p>
+            </div>
+            <div class="tl-step">
+              <h4>04 <span class="term-pill" data-term="resilience" data-zh="入窑与淬炼 · 培养抗逆力" data-en="Firing in the Kiln · Building Resilience">入窑与淬炼 · 培养抗逆力</span></h4>
+              <p data-zh="每件陶瓷都需要经历烧制。教育不是替孩子移走所有风雨与困难，而是陪孩子长出<span class='term-pill' data-term='growth_mindset'>成长型思维</span>与面对挫折的力量。" data-en="Every vessel must be fired. Education isn't removing every storm—it is cultivating <span class='term-pill' data-term='growth_mindset'>Growth Mindset</span> and resilience.">每件陶瓷都需要经历烧制。教育不是替孩子移走所有风雨与困难，而是陪孩子长出<span class="term-pill" data-term="growth_mindset">成长型思维</span>与面对挫折的力量。</p>
+            </div>
+            <div class="tl-step">
+              <h4 data-zh="05 成器与价值 · 不必完美，也拥有独特价值" data-en="05 Becoming · Worthy Without Perfection">05 成器与价值 · 不必完美，也拥有独特价值</h4>
+              <p data-zh="价值不在毫无瑕疵，而在真实而完整地成为自己——看见品格、创造力、责任感与自我价值。" data-en="Value lies not in flawlessness, but in becoming authentically whole—character, creativity, and responsibility.">价值不在毫无瑕疵，而在真实而完整地成为自己——看见品格、创造力、责任感与自我价值。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- M4 Section 2: Teacher Reflection -->
+        <section class="section-block" id="m4-reflect">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker" data-zh="PART 02 · REFLECTION" data-en="PART 02 · REFLECTION">PART 02 · REFLECTION</div>
+              <h2 class="section-title" data-zh="教育初心反思与“还没做到”句式练习" data-en="Teacher Reflections & The Power of 'Yet'">教育初心反思与“还没做到”句式练习</h2>
+            </div>
+            <button class="mark-done-btn" data-mod="m4" data-sec="m4-reflect" type="button">标记已读</button>
+          </div>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4 data-zh="🪴 讲师给教师的三组自问" data-en="🪴 Three Reflective Prompts">🪴 讲师给教师的三组自问</h4>
+              <ul>
+                <li data-zh="1. 我怎样在课堂上做到“既塑造，又引导”，避免“过度施力”？" data-en="1. How do I balance shaping and guiding without applying excessive force?">1. 我怎样在课堂上做到“既塑造，又引导”，避免“过度施力”？</li>
+                <li data-zh="2. 当孩子受挫时，我通常先批评结果，还是先接住情绪？" data-en="2. When a child fails, do I judge the score first or steady their heart?">2. 当孩子受挫时，我通常先批评结果，还是先接住情绪？</li>
+                <li data-zh="3. 是否曾因期待孩子更好，而忽略了他原本的样子？" data-en="3. Have I ever overlooked who a child truly is because I wanted them 'better'?">3. 是否曾因期待孩子更好，而忽略了他原本的样子？</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4 data-zh="✨ 把“做不到”变成“还没做到”" data-en="✨ Turning 'Can't' into 'Not Yet'">✨ 把“做不到”变成“还没做到”</h4>
+              <p data-zh="<strong>固定型：</strong>“这道题太难了，我不是学华文的料。”<br><strong>成长型：</strong>“这道题我<strong>还没</strong>找到方法，我们一起拆解第一步看看。”<br><br>静下片刻，把这份温柔与坚定带回明天的课堂。" data-en="<strong>Fixed:</strong> 'I'm just bad at this.'<br><strong>Growth:</strong> 'I haven't mastered this <strong>yet</strong>—let's break down step one together.'"><strong>固定型：</strong>“这道题太难了，我不是学华文的料。”<br><strong>成长型：</strong>“这道题我<strong>还没</strong>找到方法，我们一起拆解第一步看看。”<br><br>静下片刻，把这份温柔与坚定带回明天的课堂。</p>
+            </div>
+          </div>
+        </section>
+      </div><!-- End #view-m4 -->
+
+    </main>
+  </div>
+
+  <!-- Floating Bilingual Term Popover -->
+  <div class="term-popover" id="termPopover" role="tooltip"></div>
+
+  <!-- Glossary Modal -->
+  <div class="modal-backdrop" id="glossaryModal" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h2 data-zh="📖 全课程中英专业术语速查表" data-en="📖 All-Modules Bilingual Glossary">📖 全课程中英专业术语速查表</h2>
+        <button class="btn-pill" id="closeGlossaryBtn" type="button">✕</button>
+      </div>
+      <div style="padding:12px 22px 0;">
+        <input class="search-box" id="glossarySearch" type="search" placeholder="筛选术语（如 Stigma, SAMR, 杏仁核, 抗逆力）..." data-zh="筛选术语（如 Stigma, SAMR, 杏仁核, 抗逆力）..." data-en="Filter terms (e.g. Stigma, SAMR, ADHD, Resilience)..." />
+      </div>
+      <div class="modal-body" id="glossaryBody"></div>
+    </div>
+  </div>
+
+  <script src="js/module1-data.js"></script>
+  <script src="js/modules234-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
