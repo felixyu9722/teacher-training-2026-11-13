@@ -44,20 +44,21 @@
 
   function renderSidebar() {
     const info = META[currentModule];
+    const bmInfo = (window.BM_MODULE_META || {})[currentModule];
     const titleEl = document.getElementById("sideTitle");
     const speakerEl = document.getElementById("sideSpeaker");
     const subEl = document.getElementById("sideSub");
     const navEl = document.getElementById("sideNavList");
     if (!info || !navEl) return;
 
-    titleEl.textContent = currentLang === "zh" ? info.titleZh : info.titleEn;
-    speakerEl.textContent = currentLang === "zh" ? info.speakerZh : info.speakerEn;
-    subEl.textContent = currentLang === "zh" ? info.subZh : info.subEn;
+    titleEl.textContent = currentLang === "zh" ? info.titleZh : (currentLang === "bm" && bmInfo ? bmInfo.titleBm : info.titleEn);
+    speakerEl.textContent = currentLang === "zh" ? info.speakerZh : (currentLang === "bm" && bmInfo ? bmInfo.speakerBm : info.speakerEn);
+    subEl.textContent = currentLang === "zh" ? info.subZh : (currentLang === "bm" && bmInfo ? bmInfo.subBm : info.subEn);
 
     const done = getDoneList(currentModule);
     navEl.innerHTML = info.sections
-      .map((s) => {
-        const label = currentLang === "zh" ? s.zh : s.en;
+      .map((s, idx) => {
+        const label = currentLang === "zh" ? s.zh : (currentLang === "bm" && bmInfo ? bmInfo.sections[idx] : s.en);
         const isDone = done.includes(s.id);
         return `<li><a class="nav-link ${isDone ? "done" : ""}" href="#${s.id}"><span>${label}</span><span class="nav-check">✓</span></a></li>`;
       })
@@ -70,14 +71,19 @@
     });
   }
 
-  // ---------- Language Switching ----------
+  // ---------- Language Switching (ZH -> EN -> BM) ----------
   function applyLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("ttp_lang", lang);
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang === "bm" ? "ms-MY" : "en";
+    const bmMap = window.BM_TEXT_MAP || {};
 
     document.querySelectorAll("[data-zh]").forEach((el) => {
-      const val = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+      const zhVal = el.getAttribute("data-zh");
+      let val = zhVal;
+      if (lang === "en") val = el.getAttribute("data-en");
+      else if (lang === "bm") val = el.getAttribute("data-bm") || bmMap[zhVal] || el.getAttribute("data-en");
+
       if (val !== null) {
         if (el.tagName === "INPUT" && el.hasAttribute("placeholder")) {
           el.placeholder = val;
@@ -89,7 +95,8 @@
 
     const langBtn = document.getElementById("langToggleBtn");
     if (langBtn) {
-      langBtn.textContent = lang === "zh" ? "🌐 EN / 中文" : "🌐 中文 / EN";
+      langBtn.textContent =
+        lang === "zh" ? "🌐 中文 · 切EN/BM" : lang === "en" ? "🌐 EN · 切BM/中文" : "🌐 BM · 切中文/EN";
     }
 
     renderSidebar();
@@ -344,8 +351,8 @@
       const isDone = getDoneList(mod).includes(sid);
       btn.classList.toggle("done", isDone);
       btn.textContent = isDone
-        ? currentLang === "zh" ? "✓ 已读" : "✓ Completed"
-        : currentLang === "zh" ? "标记已读" : "Mark Read";
+        ? currentLang === "zh" ? "✓ 已读" : currentLang === "bm" ? "✓ Selesai" : "✓ Completed"
+        : currentLang === "zh" ? "标记已读" : currentLang === "bm" ? "Tanda Selesai" : "Mark Read";
     });
 
     document.querySelectorAll(".nav-link").forEach((link) => {
@@ -357,7 +364,8 @@
   // ---------- Init ----------
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("langToggleBtn")?.addEventListener("click", () => {
-      applyLanguage(currentLang === "zh" ? "en" : "zh");
+      const next = currentLang === "zh" ? "en" : currentLang === "en" ? "bm" : "zh";
+      applyLanguage(next);
     });
 
     document.querySelectorAll(".course-tab").forEach((tab) => {
